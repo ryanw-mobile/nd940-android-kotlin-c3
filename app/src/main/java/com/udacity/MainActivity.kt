@@ -9,6 +9,7 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.net.Uri
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import com.udacity.databinding.ActivityMainBinding
@@ -33,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         registerReceiver(receiver, IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE))
 
         binding.mainLayout.customButton.setOnClickListener {
-            download()
+            download(binding.mainLayout.mainRadiogroup.checkedRadioButtonId)
         }
     }
 
@@ -43,7 +44,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun download() {
+    private fun download(checkedRadioButtonId: Int) {
+        if (checkedRadioButtonId == -1) {
+            // If there is no selected option, display a Toast to let the user know to select one
+            Toast.makeText(this, R.string.toast_no_select, Toast.LENGTH_LONG).show()
+            return;
+        }
+
         val request =
             DownloadManager.Request(Uri.parse(URL))
                 .setTitle(getString(R.string.app_name))
