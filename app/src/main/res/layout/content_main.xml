@@ -9,14 +9,51 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
+    <ImageView
+        android:id="@+id/main_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimaryDark"
+        android:scaleType="fitCenter"
+        app:layout_constraintDimensionRatio="H,16:8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_cloud_download_24" />
+
     <com.udacity.LoadingButton
         android:id="@+id/custom_button"
         android:layout_width="0dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_height="60dp"
-        android:layout_margin="20dp"
+        android:layout_margin="@dimen/common_margin"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/main_radiogroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/common_margin"
+        app:layout_constraintBottom_toTopOf="@+id/custom_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_image">
+
+        <RadioButton
+            android:id="@+id/radio_glide"
+            style="@style/radiobutton"
+            android:text="@string/radio_glide" />
+
+        <RadioButton
+            android:id="@+id/radio_loadapp"
+            style="@style/radiobutton"
+            android:text="@string/radio_loadapp" />
+
+        <RadioButton
+            android:id="@+id/radio_retrofit"
+            style="@style/radiobutton"
+            android:text="@string/radio_retrofit" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
