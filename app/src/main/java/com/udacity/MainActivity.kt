@@ -51,6 +51,13 @@ class MainActivity : AppCompatActivity() {
             return;
         }
 
+        val URL = when (checkedRadioButtonId) {
+            R.id.radio_glide -> URL_GLIDE
+            R.id.radio_loadapp -> URL_UDACITY
+            R.id.radio_retrofit -> URL_RETROFIT
+            else -> return
+        }
+
         val request =
             DownloadManager.Request(Uri.parse(URL))
                 .setTitle(getString(R.string.app_name))
@@ -65,8 +72,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
-        private const val URL =
-            "https://github.com/udacity/nd940-c3-advanced-android-programming-project-starter/archive/master.zip"
+        private const val URL_GLIDE =
+            "https://github.com/bumptech/glide"
+        private const val URL_UDACITY =
+            "https://github.com/udacity/nd940-c3-advanced-android-programming-project-starter"
+        private const val URL_RETROFIT =
+            "https://github.com/square/retrofit"
         private const val CHANNEL_ID = "channelId"
     }
 
