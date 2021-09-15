@@ -26,6 +26,9 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_margin="@dimen/common_margin"
+        app:buttonBackgroundColor="@color/colorPrimary"
+        app:buttonProgressColor="@color/colorPrimaryDark"
+        app:buttonTextColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

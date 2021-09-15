@@ -3,8 +3,12 @@ package com.udacity
 import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.Canvas
+import android.graphics.Paint
+import android.graphics.Typeface
 import android.util.AttributeSet
+import android.view.MotionEvent
 import android.view.View
+import androidx.core.content.withStyledAttributes
 import kotlin.properties.Delegates
 
 class LoadingButton @JvmOverloads constructor(
@@ -21,6 +25,12 @@ class LoadingButton @JvmOverloads constructor(
 
 
     init {
+        // Custom Attributes
+        context.withStyledAttributes(attrs, R.styleable.LoadingButton) {
+            buttonBackgroundColor = getColor(R.styleable.LoadingButton_buttonBackgroundColor, 0)
+            buttonProgressColor = getColor(R.styleable.LoadingButton_buttonProgressColor, 0)
+            buttonTextColor = getColor(R.styleable.LoadingButton_buttonTextColor, 0)
+        }
 
     }
 
