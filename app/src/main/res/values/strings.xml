@@ -20,4 +20,11 @@
 
     <string name="toast_no_select">Please select the file to download</string>
     <string name="download">Download</string>
+    <string name="file_name">File name:</string>
+    <string name="status">Status:</string>
+
+    <string name="status_failed">Failed</string>
+    <string name="status_success">Success</string>
+    <string name="ok">OK</string>
+    <string name="download_status">Download status</string>
 </resources>

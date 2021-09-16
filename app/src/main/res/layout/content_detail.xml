@@ -8,4 +8,51 @@
     tools:context=".DetailActivity"
     tools:showIn="@layout/activity_detail">
 
+    <TextView
+        android:id="@+id/textView_filename_label"
+        style="@style/detail_title"
+        android:text="@string/file_name"
+        app:layout_constraintBottom_toTopOf="@+id/textView_filename"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/textView_filename"
+        style="@style/detail_value"
+        app:layout_constraintBottom_toTopOf="@+id/textView_status_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_filename_label"
+        tools:text="Retrofit" />
+
+    <TextView
+        android:id="@+id/textView_status_label"
+        style="@style/detail_title"
+        android:text="@string/status"
+        app:layout_constraintBottom_toTopOf="@+id/textView_status"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_filename" />
+
+    <TextView
+        android:id="@+id/textView_status"
+        style="@style/detail_value"
+        app:layout_constraintBottom_toTopOf="@+id/button_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_status_label"
+        tools:text="Success" />
+
+    <Button
+        android:id="@+id/button_back"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/common_margin"
+        android:text="@string/ok"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
